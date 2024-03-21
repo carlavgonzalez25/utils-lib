@@ -1,3 +1,5 @@
+import type { GenericObject } from '../types/types'
+
 export const removeElementsFromArray = <T>(data: T[], element: T[]): T[] => {
   let newArray = data
   element.forEach((item) => {
@@ -5,8 +7,6 @@ export const removeElementsFromArray = <T>(data: T[], element: T[]): T[] => {
   })
   return newArray
 }
-
-type GenericObject = Record<string | number | symbol, unknown>
 
 export const removeElementFromObjectKey = (
   data: GenericObject,
