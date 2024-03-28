@@ -1,3 +1,3 @@
 export const isInArray = (data: unknown[], element: unknown): boolean => {
-  return data.includes(element)
+  return Array.isArray(data) ? data.includes(element) : false
 }
