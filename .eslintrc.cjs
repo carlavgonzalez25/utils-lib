@@ -1,35 +1,36 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   extends: 'standard-with-typescript', // config propia
   overrides: [
     {
       env: {
-        node: true,
+        node: true
       },
       files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: 'script',
-      },
-    },
+        sourceType: 'script'
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
   ignorePatterns: [
     '.eslintrc.cjs',
     'dist',
     'vite.config.ts',
     'commitlint.config.cjs',
+    '.prettierrc',
+    '**/__tests__/*'
   ],
   plugins: ['simple-import-sort'],
   rules: {
     'simple-import-sort/imports': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
-    '@typescript-eslint/space-before-function-paren': 'off',
-    '@typescript-eslint/require-array-sort-compare': 'off',
-  },
+    '@typescript-eslint/space-before-function-paren': 'off'
+  }
 }

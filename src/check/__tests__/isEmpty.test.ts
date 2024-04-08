@@ -9,7 +9,8 @@ describe('isEmpty', () => {
     [[1, 2, 3], false],
     [{}, true],
     [{ key: 'value' }, false],
-    ['hola', true]
+    ['hola', true],
+    [null, true]
   ])('isEmpty(%j) should be %j', (arg, expected) => {
     expect(isEmpty(arg)).toBe(expected)
   })

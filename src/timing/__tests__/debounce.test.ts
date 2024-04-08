@@ -11,7 +11,7 @@ describe('debounce', () => {
     vi.resetAllMocks()
   })
 
-  it('should debounce a generic function and execute 0 times', () => {
+  it('should debounce a generic function and execute 1 times', () => {
     const originalFn = vi.fn()
     const debouncedFn = debounce(originalFn, 1000)
     debouncedFn(1)
@@ -35,5 +35,15 @@ describe('debounce', () => {
     debouncedFn(2)
     vi.advanceTimersByTime(1000)
     expect(originalFn).toHaveBeenCalledTimes(2)
+  })
+  it('should debounce a generic function and execute 0 times', () => {
+    const originalFn = vi.fn()
+    const debouncedFn = debounce(originalFn, 1000)
+    debouncedFn(1)
+    vi.advanceTimersByTime(100)
+    debouncedFn(2)
+    vi.advanceTimersByTime(100)
+    debouncedFn(3)
+    expect(originalFn).toHaveBeenCalledTimes(0)
   })
 })

@@ -9,11 +9,11 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'utils-lib',
-      fileName: 'utils-lib',
-    },
+      fileName: 'utils-lib'
+    }
   },
   test: {
-    globals: true,
+    globals: true
   },
-  plugins: [dts({ outDir: 'dist' })],
+  plugins: [dts({ outDir: 'dist', exclude: ['**/__tests__/**'] })]
 })

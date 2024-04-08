@@ -1,5 +1,6 @@
 import { typeOf } from '../misc'
-import type { GenericObject } from '../types/types'
+
+type GenericObject = Record<string | number, unknown>
 
 export function isSpecificObject(value: unknown): value is GenericObject {
   return (

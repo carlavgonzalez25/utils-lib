@@ -8,8 +8,9 @@ describe('sortArray', () => {
     [['a', 'z', 'b'], 'ASC', ['a', 'b', 'z']],
     [['a', 'z', 'b'], 'DESC', ['z', 'b', 'a']],
     [['a', 'z', 'b', 4, 1], 'ASC', [1, 4, 'a', 'b', 'z']],
-    [['a', 'z', 'b', 4, 1], 'DESC', ['z', 'b', 'a', 4, 1]]
+    [['a', 'z', 'b', 4, 1], 'DESC', ['z', 'b', 'a', 4, 1]],
+    [['a', 'z', 'b', 4, 1], 'ABC', ['a', 'z', 'b', 4, 1]]
   ])('sortArray(%j) should be %j', (a, b, expected) => {
-    expect(sortArray(a, b)).toEqual(expected)
+    expect(sortArray(a, b)).toStrictEqual(expected)
   })
 })

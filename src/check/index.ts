@@ -1,5 +1,5 @@
 export * from './isEmpty'
 export * from './isFunction'
 export * from './isInArray'
-export * from './isObjectLike'
+export * from './isSpecificObject'
 export * from './isString'
